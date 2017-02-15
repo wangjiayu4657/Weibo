@@ -1,2 +1,2 @@
-# weiBo-Swift
-体验使用 swift3.0 开发微博项目
+# Weibo
+利用 swift 开发微博项目

@@ -41,10 +41,7 @@ class WelcomeViewController: UIViewController {
     private func loadIcon() {
         if let iconUrl = UserAccount.readAccount()?.avatar_large {
             let url = URL.init(string: iconUrl)
-            
-            let image = UIImage.init(named: "avatar_default_big")?.circleImage()
-            iconView.sd_setImage(with: url, placeholderImage: image)
-           
+            iconView.sd_setImage(with: url)
         }
     }
     
@@ -66,10 +63,9 @@ class WelcomeViewController: UIViewController {
     ///头像视图
     private lazy var iconView:UIImageView = {
        let icon = UIImageView()
-        
         icon.image = UIImage.init(named: "avatar_default_big")?.circleImage()
-        icon.layer.masksToBounds = true
-        icon.layer.cornerRadius = 50.0
+//        icon.layer.masksToBounds = true
+//        icon.layer.cornerRadius = 50.0
         return icon
     }()
     ///文本

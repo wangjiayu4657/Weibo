@@ -220,6 +220,7 @@ class HomeViewController: BaseViewController,UITableViewDataSourcePrefetching {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let statues = models![indexPath.row]
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCellType.cellIdentifier(statuse: statues)) as! HomeTableViewCell
         let count = models?.count ?? 0
         if indexPath.row == (count - 1) {
