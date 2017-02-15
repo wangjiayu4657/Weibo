@@ -219,10 +219,11 @@ class ComposeViewController: UIViewController {
     }
     
     //MARK:- 懒加载
-    private lazy var textView: UITextView = {
+    fileprivate lazy var textView: UITextView = {
        let tView = UITextView()
        tView.alwaysBounceVertical = true
-       tView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.onDrag
+        //这种方法隐藏键盘可能有点问题
+//       tView.keyboardDismissMode = UIScrollViewKeyboardDismissMode.onDrag
        tView.font = UIFont.systemFont(ofSize: 17)
        tView.delegate = self
        return tView
@@ -256,4 +257,9 @@ extension ComposeViewController : UITextViewDelegate {
         placehoderLabel.isHidden = textView.hasText
         navigationItem.rightBarButtonItem?.isEnabled = textView.hasText
     }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        textView.resignFirstResponder()
+    }
+    
 }

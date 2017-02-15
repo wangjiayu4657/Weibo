@@ -39,7 +39,6 @@ class BaseViewController: UITableViewController,VisitorViewDelegate {
     
     ///回调函数
     func backBlock() {
-
+        print(#function)
     }
-    
 }
